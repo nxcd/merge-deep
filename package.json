@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/nxcd/merge-deep/issues"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "engines": {
     "node": ">=7.6.0"
   },
