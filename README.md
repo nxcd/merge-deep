@@ -4,8 +4,6 @@
 [![Javascript code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Github All Releases](https://img.shields.io/github/downloads/nxcd/merge-deep/total.svg)](https://github.com/nxcd/merge-deep)
 [![GitHub package version](https://img.shields.io/github/package-json/v/nxcd/merge-deep.svg)](https://github.com/nxcd/merge-deep)
-[![Known Vulnerabilities](https://snyk.io/test/github/nxcd/merge-deep/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nxcd/merge-deep?targetFile=package.json)
-
 
 ## Instalation
 
