@@ -1,0 +1,45 @@
+{
+  "name": "@nxcd/merge-deep",
+  "version": "0.0.1",
+  "author": "Caio Delgado <caiodelgado.csd@gmail.com>",
+  "license": "GPL-3.0",
+  "description": "A function to do deep merges",
+  "keywords": [
+    "merge",
+    "merge-deep"
+  ],
+  "main": "index.js",
+  "files": [
+    "dist/*",
+    "dist/**/*"
+  ],
+  "homepage": "https://github.com/nxcd/merge-deep#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nxcd/merge-deep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nxcd/merge-deep/issues"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "scripts": {
+    "prepublish": "npm run build:clean",
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "coverage": "nyc --reporter=text npm test",
+    "coverage:report": "nyc report --reporter=text-lcov",
+    "lint": "standard --global describe --global it",
+    "build:clean": "npm run clean && npm run build",
+    "test": "mocha test/*.test.js --check-leaks --full-trace --use_strict --recursive"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "standard": "^16.0.1",
+    "typescript": "^4.0.5"
+  }
+}
