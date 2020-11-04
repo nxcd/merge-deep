@@ -11,12 +11,12 @@ Simply run
 
 **NPM:**
 ```bash
-$ npm install @nxcd/tardis
+$ npm install @nxcd/merge-deep
 ```
 
 **Yarn:**
 ```bash
-$ yarn add @nxcd/tardis
+$ yarn add @nxcd/merge-deep
 ```
 
 ## Usage
