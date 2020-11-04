@@ -20,31 +20,30 @@ function mergeDeep <T>(target: GenericObject<T>, source: GenericObject<T>): Gene
     return source || target
   }
 
+  const targetObject = target as unknown as GenericObject<T>
+  const sourceObject = source as unknown as GenericObject<T>
+
   const mergedKeys = Object.keys({
     ...target,
     ...source
   }) as (keyof GenericObject<T>)[]
 
-  const targetObject = target as unknown as GenericObject<T>
-  const sourceObject = source as unknown as GenericObject<T>
-
   const mergedObject = mergedKeys
-    .reduce((mergedObject: GenericObject<T>, key: keyof GenericObject<T>) => {
+    .reduce((mergedObject: {[key: string]: GenericObject<T>}, key: keyof GenericObject<T>) => {
       if (typeof targetObject[key] === 'object') {
-        Object.defineProperty(mergedObject, key, {
-          value: mergeDeep(
-            targetObject[key] as unknown as GenericObject<T>,
-            sourceObject[key] as unknown as GenericObject<T>
-          )
-        })
+        mergedObject[key] = mergeDeep(
+          targetObject[key] as unknown as {[key: string]: GenericObject<T>},
+          sourceObject[key] as unknown as {[key: string]: GenericObject<T>}
+        )
 
         return mergedObject
       }
 
-      mergedObject[key] = sourceObject[key] || targetObject[key]
+      mergedObject[key] = sourceObject[key] as unknown as {[key: string]: T} ||
+        targetObject[key] as unknown as {[key: string]: T}
 
       return mergedObject
-    }, {})
+    }, {} as {[key: string]: GenericObject<T>})
 
   return mergedObject
 }
