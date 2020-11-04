@@ -1,6 +1,6 @@
 {
   "name": "@nxcd/merge-deep",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Caio Delgado <caiodelgado.csd@gmail.com>",
   "license": "GPL-3.0",
   "description": "A function to do deep merges",
